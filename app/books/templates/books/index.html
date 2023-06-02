@@ -1,0 +1,44 @@
+{% extends "base.html" %} {% load static %}
+{% block title %} Book Shoppe{% endblock%}
+
+{% block content%}
+
+{% include 'books/snippets/options-header.html' %}
+
+<table class="book-table">
+  <thead>
+    <tr class="table-header-row">
+      <th class="book-id-header"></th>
+      <th>
+        <a class="table-header-text">Title</a>
+        <span class="material-icons-outlined header-arrow"></span>
+      </th>
+      <th>
+        <a class="table-header-text">Authors</a>
+        <span class="material-icons-outlined header-arrow"></span>
+      </th>
+      <th>
+        <a class="table-header-text">Cover</a>
+        <span class="material-icons-outlined header-arrow"></span>
+      </th>
+      <th>
+        <a class="table-header-text">Price</a>
+        <span class="material-icons-outlined header-arrow"></span>
+      </th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody id="tableBody">
+    {% for book in books %}
+    {% include 'books/snippets/table-row.html' %}
+    {% endfor %}
+  </tbody>
+</table>
+
+{% include 'books/snippets/add-book-form.html' %}
+
+{% include 'books/snippets/add-button.html' %}
+
+{% endblock %}

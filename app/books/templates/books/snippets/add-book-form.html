@@ -1,0 +1,33 @@
+<div id="formContainer" class="form-container">
+    <form id="addBookForm" class="add-book-form">
+        <span id="closeForm" class="material-icons-outlined close-form">close</span>
+
+        <label for="bookTitle" class="add-book-input-label">Title:</label>
+        <input type="text" id="bookTitle" name="bookTitle" placeholder="The Hobbit" class="add-book-input">
+        <small id="invalidTitle">*Please enter a book title</small>
+
+        <label for="bookAuthor" class="add-book-input-label">Authors:</label>
+        <input type="text" id="bookAuthor" name="bookAuthor" placeholder="J.R.R. Tolkien" class="add-book-input">
+        <small id="invalidAuthor">*Please enter all authors, separated by a comma</small>
+
+        <label for="price" class="add-book-input-label">Price: </label>
+        <input type="number" step="0.01" id="price" name="price" placeholder="5.99" class="add-book-input">
+        <small id="invalidPrice">*The price should include only the number and be greater than 0</small>
+
+        <label for="coverType" class="add-book-input-label">Cover Type:</label>
+        <select id="coverType" name="coverType" class="cover-type-dropdown" autocomplete="off">
+            <option value="Paperback" selected="">Paperback</option>
+            <option value="Hardback">Hardback</option>
+        </select>
+
+        <label for="availability" class="add-book-input-label">Availability:</label>
+        <select id="availability" name="availability" class="cover-type-dropdown" autocomplete="off">
+            <option value="Available" selected="">Available</option>
+            <option value="Unavailable">Unavailable</option>
+            <option value="Purchased">Purchased</option>
+        </select>
+
+        <input type="button" id="submitButton" class="submit-button" value="Submit">
+    </form>
+</div>
+<div id='formBackground' class='form-background'></div>

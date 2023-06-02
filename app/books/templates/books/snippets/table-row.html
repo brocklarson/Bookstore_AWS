@@ -1,0 +1,18 @@
+<tr>
+    <td class="book-id">{{ book.id }}</td>
+    <td>{{ book.title }}</td>
+
+    <td>{{ book.authors.all|join:", " }}</td>
+
+    {% if book.paperback %}
+    <td>Paperback</td>
+    {% else %}
+    <td>Hardback</td>
+    {% endif %}
+
+    <td>$<span>{{ book.price|floatformat:2 }}</span></td>
+
+    <td class="icons-cell"><span class="material-icons-outlined sell">sell</span></td>
+    <td class="icons-cell"><span class="material-icons-outlined edit">edit</span></td>
+    <td class="icons-cell"><span class="material-icons-outlined remove">close</span></td>
+</tr>
