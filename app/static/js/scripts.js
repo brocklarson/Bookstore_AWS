@@ -219,22 +219,19 @@ const tableModule = (() => {
     const bookTable = $(`#tableBody`)[0];
     const table = $(`table`)[0];
     const searchBar = $(`#searchBar`)[0];
-    const bookButtons = $(`.book-status-buttons button`);
+    const bookStatus = $(`#bookStatus`)[0];
 
     //LISTENERS
     table.addEventListener(`click`, handleTableClick);
-    Array.from(bookButtons).forEach(btn => btn.addEventListener(`click`, handleBookButtons));
+    bookStatus.addEventListener(`change`, handleBookButtons);
     searchBar.addEventListener('input', updateTable);
 
     // BOOK AVAILABILITY FUNCTIONALITY
     function handleBookButtons(event) {
-        if (event.target.id == "allBooks") BOOKS_MODE = "all";
-        else if (event.target.id == "availableBooks") BOOKS_MODE = "available";
-        else if (event.target.id == "unavailableBooks") BOOKS_MODE = "unavailable";
-        else if (event.target.id == "purchasedBooks") BOOKS_MODE = "purchased";
-
-        Array.from(bookButtons).forEach(btn => btn.classList.remove("active"));
-        event.target.classList.add("active");
+        if (event.target.value == "allBooks") BOOKS_MODE = "all";
+        else if (event.target.value == "availableBooks") BOOKS_MODE = "available";
+        else if (event.target.value == "unavailableBooks") BOOKS_MODE = "unavailable";
+        else if (event.target.value == "purchasedBooks") BOOKS_MODE = "purchased";
 
         ajaxModule.updateDisplay();
     }
